@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chuyến Phiêu Lưu Nhỏ Cho HK</title>
+  <meta name="description" content="Lời mời dạng sách truyện handmade dành riêng cho HK.">
+  <meta name="theme-color" content="#a8bf9a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%B0%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Playfair+Display:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader-inner">
+      <div class="loader-book" aria-hidden="true">
+        <span class="lb-left"></span><span class="lb-right"></span>
+        <span class="lb-page p1"></span><span class="lb-page p2"></span><span class="lb-page p3"></span>
+      </div>
+      <p class="loader-text" id="loaderText">Đang gom đom đóm…</p>
+    </div>
+  </div>
+
+  <!-- ============ UI CHROME ============ -->
+  <div class="ribbon" aria-hidden="true"><span id="ribbonFill"></span></div>
+
+  <button class="music-btn" id="musicBtn" type="button" aria-pressed="false" aria-label="Bật nhạc">
+    <span class="music-icon" aria-hidden="true">♪</span>
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="music-label">Nhạc: tắt</span>
+  </button>
+
+  <main id="story">
+
+    <!-- ============ CHAPTER 1 — OPEN THE STORYBOOK ============ -->
+    <section class="chapter cover-chapter" id="ch1" aria-label="Chương Một: Mở Sách Truyện">
+      <div class="fireflies" id="fireflies1" aria-hidden="true"></div>
+      <div class="forest-edge left" data-art="tree:#8fae86" aria-hidden="true"></div>
+      <div class="forest-edge right" data-art="tree:#9cb98f" aria-hidden="true"></div>
+
+      <div class="cover-stage" id="coverStage">
+        <p class="chapter-tag">Chương Một · <em>Mở Sách Truyện</em></p>
+
+        <div class="book-wrap" id="bookWrap">
+          <div class="book" id="book" role="button" tabindex="0" aria-label="Mở sách truyện">
+            <div class="book-back"></div>
+
+            <!-- final right page -->
+            <div class="page-right">
+              <div class="pr-inner">
+                <div class="pr-butterfly" data-art="butterfly:#f2b8b5:#e9cf7a" aria-hidden="true"></div>
+                <p class="pr-text">…và ở đâu đó trong thành phố đầy nắng này, có một người đang lặng lẽ chuẩn bị <em>một chuyến phiêu lưu nhỏ</em> — chỉ dành cho <strong>HK</strong>.</p>
+                <p class="pr-text small">Mình bắt đầu nhé?</p>
+                <button class="btn btn-pink btn-sm" id="beginBtn" type="button" tabindex="-1">Bắt đầu câu chuyện ✨</button>
+                <span class="folio">— 3 —</span>
+              </div>
+            </div>
+
+            <!-- turning leaves -->
+            <div class="leaf" style="--z:12">
+              <div class="leaf-face leaf-front">
+                <p class="leaf-title">Mục Lục</p>
+                <ol class="toc">
+                  <li><span>I.</span> Mở Sách Truyện</li>
+                  <li><span>II.</span> Lời Mời</li>
+                  <li><span>III.</span> Bản Đồ Phiêu Lưu</li>
+                  <li><span>IV.</span> Kế Hoạch</li>
+                  <li><span>V.</span> Kết Thúc Có Hậu</li>
+                </ol>
+                <span class="folio">— 1 —</span>
+              </div>
+              <div class="leaf-face leaf-back">
+                <div class="dedication">
+                  <div class="ded-flower" data-art="flower:#f2b8b5" aria-hidden="true"></div>
+                  <p>Tặng <strong>HK</strong>,<br>nhà thám hiểm nhỏ<br>ngoan xinh iu và dũng cảm nhất mà HQ biết.</p>
+                </div>
+              </div>
+            </div>
+            <div class="leaf" style="--z:11">
+              <div class="leaf-face leaf-front">
+                <p class="leaf-title once">Ngày xửa ngày xưa…</p>
+                <p class="leaf-text">ở một thành phố đầy xe máy, nắng vàng và cà phê sữa đá, có một người rất đặc biệt tên là HK.</p>
+                <span class="folio">— 2 —</span>
+              </div>
+              <div class="leaf-face leaf-back">
+                <div class="mini-meadow" aria-hidden="true">
+                  <span data-art="flower:#e9cf7a"></span><span data-art="mushroom"></span><span data-art="flower:#f2b8b5"></span>
+                </div>
+                <p class="leaf-text center">Mọi câu chuyện đẹp đều bắt đầu từ một bước chân nhỏ…</p>
+              </div>
+            </div>
+
+            <!-- cover -->
+            <div class="cover">
+              <div class="cover-front">
+                <div class="cover-frame">
+                  <span class="cover-sprig bl" data-art="sprig" aria-hidden="true"></span>
+                  <span class="cover-sprig br" data-art="sprig" aria-hidden="true"></span>
+                  <p class="cover-small">một cuốn sách làm bằng cả tấm lòng</p>
+                  <div class="cover-emblem" data-art="rabbit" aria-hidden="true"></div>
+                  <h1 class="cover-title">Chuyến Phiêu Lưu Nhỏ<span>cho HK</span></h1>
+                  <p class="cover-foot">✿ Chương I – V ✿</p>
+                </div>
+              </div>
+              <div class="cover-back">
+                <div class="ex-libris">
+                  <span class="exl-top">Sách của</span>
+                  <div class="exl-art" data-art="sprig" aria-hidden="true"></div>
+                  <span class="exl-name">Cuốn sách này thuộc về<br><strong>HK</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cover-rabbit" id="coverRabbit" data-art="rabbit" aria-hidden="true"></div>
+          <div class="cover-meadow" aria-hidden="true">
+            <span data-art="flower:#f2b8b5"></span><span data-art="flower:#e9cf7a"></span><span data-art="mushroom"></span>
+            <span data-art="flower:#fbf3e2"></span><span data-art="flower:#f2b8b5"></span><span data-art="flower:#e9cf7a"></span>
+          </div>
+        </div>
+
+        <p class="hint" id="hint" aria-live="polite">Chạm vào sách để mở nhé ✨</p>
+      </div>
+    </section>
+
+    <!-- ============ CHAPTER 2 — THE INVITATION ============ -->
+    <section class="chapter" id="ch2" aria-label="Chương Hai: Lời Mời">
+      <article class="page parchment turn">
+        <span class="corner c-tl" data-art="sprig" aria-hidden="true"></span>
+        <span class="corner c-br" data-art="sprig" aria-hidden="true"></span>
+
+        <div class="falling-leaves" aria-hidden="true">
+          <span data-art="leaf:#a8bf9a"></span><span data-art="leaf:#e9cf7a"></span><span data-art="leaf:#8fae86"></span><span data-art="leaf:#f2b8b5"></span><span data-art="leaf:#a8bf9a"></span>
+        </div>
+        <div class="butterflies" aria-hidden="true">
+          <span class="bf bf1" data-art="butterfly:#f2b8b5:#e9cf7a"></span>
+          <span class="bf bf2" data-art="butterfly:#e9cf7a:#a8bf9a"></span>
+          <span class="bf bf3" data-art="butterfly:#d9b8d6:#f2b8b5"></span>
+        </div>
+
+        <header class="chapter-head reveal">
+          <span class="ch-num">Chương Hai</span>
+          <h2 class="ch-title">Lời Mời</h2>
+          <span class="flourish" data-art="flourish" aria-hidden="true"></span>
+        </header>
+
+        <div class="invite-grid">
+          <div class="invite-rabbit reveal" data-art="rabbitSign"></div>
+          <div class="letter reveal">
+            <p class="dear">HK ngoan xinh iuuu ơi,</p>
+            <p>Giữa lòng Sài Gòn có một khu rừng nhỏ, nơi hươu cao cổ vươn tới ngọn cây, voi con nghịch nước dưới nắng, còn chuột lang nước thì chẳng làm gì cả — mà vẫn dễ thương vô cùng.</p>
+            <p>Để HQ dẫn HK khám phá nơi đó nha. HK chỉ cần mang theo nụ cười, đôi giày êm nhất và một chiếc bụng đói kem. Bản đồ để HQ lo. 🗺️</p>
+            <p class="sign-off">Với một trái tim đầy tiếng cười,<br><span>from HQ per fech with luv HK 🐾</span></p>
+          </div>
+        </div>
+
+        <div class="meadow" aria-hidden="true">
+          <span data-art="flower:#f2b8b5"></span><span data-art="flower:#e9cf7a"></span><span data-art="mushroom"></span><span data-art="flower:#fbf3e2"></span>
+          <span data-art="flower:#d9b8d6"></span><span data-art="flower:#f2b8b5"></span><span data-art="flower:#e9cf7a"></span><span data-art="mushroom"></span><span data-art="flower:#f2b8b5"></span>
+        </div>
+
+        <div class="page-foot">
+          <button class="btn btn-sage" type="button" data-next="#ch3">Lật trang →</button>
+        </div>
+        <span class="folio">— 4 —</span>
+      </article>
+    </section>
+
+    <!-- ============ CHAPTER 3 — THE ADVENTURE MAP ============ -->
+    <section class="chapter" id="ch3" aria-label="Chương Ba: Bản Đồ Phiêu Lưu">
+      <div class="page map-page turn">
+        <header class="chapter-head reveal">
+          <span class="ch-num">Chương Ba</span>
+          <h2 class="ch-title">Bản Đồ Phiêu Lưu</h2>
+          <span class="flourish" data-art="flourish" aria-hidden="true"></span>
+          <p class="ch-sub">Đi theo con đường quanh co và chạm vào từng tấm biển để gặp bạn mới &amp; nhận con dấu.</p>
+        </header>
+
+        <div class="passport" id="passport">
+          <span class="passport-label">Con dấu thám hiểm</span>
+          <span class="stamp-dots" id="stampDots">
+            <i title="Thỏ">🐰</i><i title="Gấu">🐻</i><i title="Hươu cao cổ">🦒</i><i title="Voi">🐘</i><i title="Khỉ">🐒</i><i title="Chuột lang nước">🍊</i>
+          </span>
+          <span class="passport-count" aria-live="polite"><b id="stampCount">0</b>/6</span>
+        </div>
+
+        <div class="map" id="map">
+          <svg class="trail" id="trail" aria-hidden="true" focusable="false">
+            <path class="trail-edge" id="trailEdge" d=""/>
+            <path class="trail-road" id="trailRoad" d=""/>
+            <g id="paws"></g>
+            <g id="traveler" class="traveler">
+              <g class="traveler-bob">
+                <circle r="17" fill="#f2b8b5" stroke="#5c4130" stroke-width="2.2"/>
+                <text y="6" text-anchor="middle">HK</text>
+              </g>
+            </g>
+          </svg>
+
+          <div class="flock f1" aria-hidden="true"><span data-art="bird:#f2b8b5"></span><span data-art="bird:#e9cf7a"></span><span data-art="bird:#a8bf9a"></span></div>
+          <div class="flock f2" aria-hidden="true"><span data-art="bird:#e9cf7a"></span><span data-art="bird:#f2b8b5"></span></div>
+          <div class="flock f3" aria-hidden="true"><span data-art="bird:#a8bf9a"></span><span data-art="bird:#d9b8d6"></span><span data-art="bird:#f2b8b5"></span></div>
+
+          <div class="map-start reveal"><span>✿ Bắt đầu từ đây ✿</span></div>
+          <!-- stops are built in script.js -->
+          <div id="stops"></div>
+          <div class="map-end reveal">
+            <p>Con đường dẫn tới… <em>kế hoạch!</em></p>
+            <button class="btn btn-sage" type="button" data-next="#ch4">Lật trang →</button>
+          </div>
+        </div>
+        <span class="folio">— 5 —</span>
+      </div>
+    </section>
+
+    <!-- ============ CHAPTER 4 — THE PLAN ============ -->
+    <section class="chapter" id="ch4" aria-label="Chương Bốn: Kế Hoạch">
+      <div class="page ticket-page turn">
+        <span class="corner c-tr" data-art="sprig" aria-hidden="true"></span>
+        <span class="corner c-bl" data-art="sprig" aria-hidden="true"></span>
+        <header class="chapter-head reveal">
+          <span class="ch-num">Chương Bốn</span>
+          <h2 class="ch-title">Kế Hoạch</h2>
+          <span class="flourish" data-art="flourish" aria-hidden="true"></span>
+        </header>
+
+        <div class="ticket reveal" id="ticket">
+          <div class="ticket-main">
+            <div class="ticket-top"><span>Vé Một Người · Khách Rất Đặc Biệt</span><span>Nº 0001</span></div>
+            <h3 class="dest">Thảo Cầm Viên <em>Sài Gòn</em></h3>
+            <p class="dest-sub">Vườn thú & vườn bách thảo · Khu rừng nhỏ giữa lòng thành phố</p>
+
+            <div class="ticket-fields">
+              <div class="field guest-field">
+                <span class="f-label">Khách mời</span>
+                <span class="guest">HK <i>♥</i></span>
+              </div>
+              <div class="field">
+                <label class="f-label" for="tDate">Ngày</label>
+                <input type="date" id="tDate" autocomplete="off">
+              </div>
+              <div class="field">
+                <label class="f-label" for="tTime">Giờ</label>
+                <input type="time" id="tTime" autocomplete="off">
+              </div>
+              <div class="field wide">
+                <label class="f-label" for="tPlace">Điểm hẹn</label>
+                <input type="text" id="tPlace" maxlength="70" autocomplete="off" placeholder="Mình gặp nhau ở đâu nhỉ?">
+              </div>
+            </div>
+
+            <div class="ticket-art" data-art="bear" aria-hidden="true"></div>
+            <div class="stamp" id="stamp" aria-hidden="true">Phiêu lưu<br><b>Đã duyệt ♥</b></div>
+          </div>
+          <div class="ticket-stub">
+            <span class="stub-admit">VÉ VÀO CỔNG</span>
+            <span class="stub-name">HK</span>
+            <span class="stub-date" id="stubDate">—</span>
+            <span class="barcode" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <p class="edit-note reveal">✎ Chạm vào ô bất kỳ để sửa — thay đổi tự lưu trên thiết bị này.</p>
+        <div class="ticket-actions reveal">
+          <button class="btn btn-pink" type="button" id="stampBtn">Đóng dấu 💮</button>
+          <button class="btn btn-cream" type="button" id="icsBtn">Lưu vào lịch 🗓️</button>
+          <button class="btn btn-cream" type="button" id="linkBtn">Sao chép link mời 🔗</button>
+        </div>
+        <div class="page-foot">
+          <button class="btn btn-sage" type="button" data-next="#ch5">Lật trang →</button>
+        </div>
+        <span class="folio">— 6 —</span>
+      </div>
+    </section>
+
+    <!-- ============ CHAPTER 5 — THE HAPPY ENDING ============ -->
+    <section class="chapter finale" id="ch5" aria-label="Chương Năm: Kết Thúc Có Hậu">
+      <div class="page clearing-page turn">
+        <header class="chapter-head reveal">
+          <span class="ch-num">Chương Năm</span>
+          <h2 class="ch-title">Kết Thúc Có Hậu</h2>
+          <span class="flourish" data-art="flourish" aria-hidden="true"></span>
+        </header>
+
+        <div class="clearing reveal" id="clearing">
+          <div class="fireflies" id="fireflies5" aria-hidden="true"></div>
+          <div class="sun" aria-hidden="true"></div>
+          <div class="cl-garland" data-art="garland" aria-hidden="true"></div>
+          <div class="cl-tree left" data-art="tree:#8fae86" aria-hidden="true"></div>
+          <div class="cl-tree right" data-art="tree:#9cb98f" aria-hidden="true"></div>
+          <div class="cl-monkey g-animal" style="--i:5" data-art="monkey"></div>
+          <div class="gather">
+            <div class="g-animal g-giraffe" style="--i:0" data-art="giraffe"></div>
+            <div class="g-animal g-elephant" style="--i:1" data-art="elephant"></div>
+            <div class="g-animal g-rabbit" style="--i:2" data-art="rabbit"></div>
+            <div class="g-animal g-bear" style="--i:3" data-art="bear"></div>
+            <div class="g-animal g-capy" style="--i:4" data-art="capybara"></div>
+          </div>
+          <div class="cl-flowers" aria-hidden="true">
+            <span data-art="flower:#f2b8b5"></span><span data-art="flower:#e9cf7a"></span><span data-art="mushroom"></span><span data-art="flower:#d9b8d6"></span><span data-art="flower:#f2b8b5"></span>
+          </div>
+          <div class="flock f4" aria-hidden="true"><span data-art="bird:#f2b8b5"></span><span data-art="bird:#e9cf7a"></span></div>
+        </div>
+
+        <h2 class="question reveal">HK ơi, đi cùng HQ chuyến phiêu lưu nhỏ này nhé?</h2>
+        <div class="answer-btns reveal">
+          <button class="btn btn-pink btn-lg" type="button" data-answer="yes">ĐI CHỨ! 💗</button>
+          <button class="btn btn-sage btn-lg" type="button" data-answer="ofcourse">TẤT NHIÊN RỒI! 🐻</button>
+        </div>
+        <p class="the-end reveal">~ Hết chiếc vé tham quan TCV ròi~</p>
+        <span class="folio">— 7 —</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ CELEBRATION ============ -->
+  <div class="celebrate" id="celebrate" role="dialog" aria-modal="true" aria-labelledby="celebrateTitle" hidden>
+    <div class="celebrate-card">
+      <div class="cc-animals" aria-hidden="true">
+        <span data-art="rabbit"></span><span data-art="bear"></span><span data-art="capybara"></span>
+      </div>
+      <h2 class="cc-title" id="celebrateTitle">YAYYY! Chuyến phiêu lưu nhỏ của tụi mình đang chờ! 💕</h2>
+      <p class="cc-details" id="celebrateDetails"></p>
+      <div class="cc-actions">
+        <button class="btn btn-pink" type="button" id="ccIcs">Lưu vào lịch 🗓️</button>
+        <button class="btn btn-cream" type="button" id="ccAgain">Đọc lại từ đầu 📖</button>
+        <button class="btn btn-sage" type="button" id="ccClose">Đóng ✿</button>
+      </div>
+    </div>
+  </div>
+
+  <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
